@@ -6,6 +6,20 @@ The original goal was to create a small network-controlled platform that could b
 
 This project was intended for controlled positioning during RF, sensor, antenna, camera, or directional testing where repeatable pan/tilt orientation is useful.
 
+## Concept Images
+
+### Full Assembly
+
+![Pan-tilt platform full assembly](images/PanTiltPlatform-Overall-Isometric.png)
+
+### Base Internals
+
+![Pan-tilt platform base internals](images/PanTiltPlatform-BaseInternals-Isometric.png)
+
+### Tripod Interface
+
+![Pan-tilt platform tripod interface](images/PanTiltPlatform-Base-Isometric.png)
+
 ## Project Status
 
 Prototype / paused.
@@ -94,6 +108,22 @@ The general hardware concept is:
 * mechanical pan/tilt platform or bracket
 * optional position feedback, if added later
 
+## Mechanical Design / CAD Files
+
+The 3D model and mechanical design files are hosted on GrabCAD:
+
+[Pan-Tilt Platform on GrabCAD](https://grabcad.com/library/pan-tilt-platform-2)
+
+The mechanical design includes:
+
+- base housing
+- internal electronics and motor mounting features
+- rotating pan stage
+- tilt frame
+- honeycomb-style mounting surface
+- tripod interface
+- 1/4-20 embedded nut retention / jam nut design
+  
 ## Power Notes
 
 Do not power servos directly from the ESP8266 board regulator unless the current draw is known to be safe.
