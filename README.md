@@ -123,7 +123,53 @@ The mechanical design includes:
 - honeycomb-style mounting surface
 - tripod interface
 - 1/4-20 embedded nut retention / jam nut design
-  
+
+## Motor and Power Notes
+
+This design uses common 28BYJ-48 5 V geared stepper motors.
+
+These motors are inexpensive and widely available, making them useful for lightweight positioning fixtures and proof-of-concept builds. They should not be treated as high-torque actuators.
+
+Typical published 28BYJ-48 specifications include:
+
+| Parameter | Typical Value |
+|---|---|
+| Rated voltage | 5 V DC |
+| Motor type | 4-phase unipolar geared stepper |
+| Step / stride angle | 5.625° / 64 |
+| Approximate theoretical output resolution | ~0.088° per step |
+| Published pull-in torque | ~300 gf·cm |
+
+The theoretical step resolution is not the same as real platform accuracy. Actual pointing accuracy will be affected by gear backlash, 3D-printed part tolerances, bearing fit, flex, load balance, and motor quality.
+
+### Payload Limit
+
+No formal payload rating has been established.
+
+Until tested, this platform should be treated as suitable for lightweight test articles only, such as:
+
+- small antennas
+- compact sensors
+- small reflectors
+- lightweight camera modules
+- test coupons or RF samples
+
+Payload capacity depends on the weight of the mounted object, its center of mass, tilt angle, print material, bearing fit, motor quality, and power supply performance.
+
+### Estimated Current Draw
+
+Approximate planning values:
+
+| Component | Estimated Current |
+|---|---|
+| Wemos D1 Mini / ESP8266 | plan for 250–500 mA available at 5 V input |
+| One 28BYJ-48 motor + ULN2003 driver | ~250–300 mA while energized |
+| Two 28BYJ-48 motors + drivers | ~500–600 mA while energized |
+
+A 5 V supply rated for at least 1.5 A is recommended. A 5 V / 2 A supply gives more margin.
+
+Stepper motors may continue drawing current while holding position, even when they are not visibly moving. Do not rely on a weak USB port or marginal regulator for final testing.
+
 ## Power Notes
 
 Do not power servos directly from the ESP8266 board regulator unless the current draw is known to be safe.
